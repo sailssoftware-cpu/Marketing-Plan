@@ -1,412 +1,1070 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Sails Software Marketing Strategy Dashboard 2026</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sails Software — Content Strategy Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
-
+:root {
+  --sky:    #00b9ff;
+  --navy:   #064a70;
+  --sky-10: rgba(0,185,255,0.10);
+  --sky-18: rgba(0,185,255,0.18);
+  --sky-30: rgba(0,185,255,0.30);
+  --navy-8: rgba(6,74,112,0.08);
+  --navy-15:rgba(6,74,112,0.15);
+  --bg:     #ffffff;
+  --surface:#F4FAFD;
+  --surface2:#E8F5FC;
+  --border: rgba(6,74,112,0.10);
+  --border2:rgba(6,74,112,0.20);
+  --text:   #0D2B3E;
+  --muted:  #4A7A96;
+  --ai:     #7C3AED;
+  --devops: #D97706;
+  --analytics:#059669;
+  --edu:    #DC2626;
+  --ai-10:  rgba(124,58,237,0.08);
+  --devops-10:rgba(217,119,6,0.08);
+  --analytics-10:rgba(5,150,105,0.08);
+  --edu-10: rgba(220,38,38,0.08);
+  --tofu-c: #64748B;
+  --mofu-c: var(--sky);
+  --bofu-c: var(--analytics);
+  --radius: 12px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
 body{
-font-family:Poppins,sans-serif;
-margin:0;
-background:#ffffff;
-color:#0D2B3E;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
 }
 
-:root{
---navy:#064a70;
---sky:#00b9ff;
---light:#f4f9fc;
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy);
+  padding:0 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 16px rgba(6,74,112,0.25);
 }
-
-/* HEADER */
-
-.header{
-background:var(--navy);
-color:white;
-padding:20px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+.topbar-logo img{height:40px;display:block;}
+.topbar-title{
+  font-size:0.78rem;font-weight:600;letter-spacing:0.5px;
+  color:rgba(255,255,255,0.75);
+  text-align:right;line-height:1.4;
 }
+.topbar-title span{display:block;color:#fff;font-size:0.85rem;font-weight:700;}
 
-.header img{
-height:42px;
-width:auto;
-display:block;
-}
-
-/* HERO */
-
+/* ── HERO ── */
 .hero{
-background:linear-gradient(135deg,#064a70,#0a6fa0);
-color:white;
-padding:70px 30px;
-text-align:center;
+  background:linear-gradient(135deg,var(--navy) 0%,#0a6fa0 100%);
+  padding:52px 32px 44px;
+  position:relative;overflow:hidden;
 }
-
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b9ff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner{position:relative;max-width:1340px;margin:0 auto;}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,185,255,0.15);border:1px solid rgba(0,185,255,0.3);
+  border-radius:20px;padding:5px 14px;
+  font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--sky);margin-bottom:18px;
+}
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;
+  color:#fff;line-height:1.15;margin-bottom:12px;
+}
+.hero h1 em{font-style:normal;color:var(--sky);}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.7);max-width:680px;line-height:1.75;margin-bottom:24px;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;}
+.hero-badge{
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  border-radius:20px;padding:5px 14px;
+  font-size:0.72rem;font-weight:500;color:rgba(255,255,255,0.85);
+  display:flex;align-items:center;gap:6px;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* ── TAB BAR ── */
+.tabs-wrap{
+  background:#fff;
+  border-bottom:2px solid var(--border2);
+  position:sticky;top:64px;z-index:100;
+}
+.tabs-inner{
+  max-width:1340px;margin:0 auto;
+  display:flex;gap:0;overflow-x:auto;
+  padding:0 32px;
+  scrollbar-width:none;
+}
+.tabs-inner::-webkit-scrollbar{display:none;}
+.tab-btn{
+  font-family:'Poppins',sans-serif;
+  font-size:0.72rem;font-weight:600;letter-spacing:0.3px;
+  padding:14px 20px;
+  border:none;background:none;cursor:pointer;
+  color:var(--muted);
+  border-bottom:3px solid transparent;
+  white-space:nowrap;
+  transition:all 0.2s;
+  display:flex;align-items:center;gap:7px;
+  position:relative;bottom:-2px;
+}
+.tab-btn:hover{color:var(--navy);}
+.tab-btn.active{color:var(--navy);font-weight:700;border-bottom-color:var(--sky);}
+.tab-btn .tb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ── WRAP ── */
+.wrap{max-width:1340px;margin:0 auto;padding:0 32px;}
+
+/* ── PANELS ── */
+.panel{display:none;padding:36px 0 72px;animation:fadeIn 0.3s ease;}
+.panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── PANEL HEADER ── */
+.panel-header{
+  display:flex;align-items:flex-start;gap:20px;
+  background:linear-gradient(135deg,var(--navy),#0a6fa0);
+  border-radius:var(--radius);
+  padding:28px 28px;margin-bottom:32px;
+}
+.ph-icon{
+  width:60px;height:60px;border-radius:14px;
+  background:rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.9rem;flex-shrink:0;
+}
+.ph-title{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.ph-desc{font-size:0.82rem;color:rgba(255,255,255,0.72);line-height:1.7;}
+.ph-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.ph-tag{
+  background:rgba(0,185,255,0.2);border:1px solid rgba(0,185,255,0.35);
+  border-radius:14px;padding:3px 12px;
+  font-size:0.65rem;font-weight:600;letter-spacing:0.5px;color:var(--sky);
+  text-transform:uppercase;
 }
 
-.hero p{
-max-width:750px;
-margin:auto;
-opacity:.9;
+/* ── SECTION TITLE ── */
+.sec-title{
+  display:flex;align-items:center;gap:10px;
+  font-size:1rem;font-weight:700;color:var(--navy);
+  margin:32px 0 16px;
+}
+.sec-title-bar{width:4px;height:22px;border-radius:2px;flex-shrink:0;}
+
+/* ── FUNNEL ── */
+.funnel-wrap{
+  background:var(--surface);border:1px solid var(--border2);
+  border-radius:var(--radius);padding:22px;
+}
+.funnel-row{display:grid;grid-template-columns:110px 1fr;gap:14px;margin-bottom:14px;align-items:start;}
+.funnel-row:last-child{margin-bottom:0;}
+.funnel-stage{
+  border-radius:10px;padding:10px 8px;
+  text-align:center;min-height:58px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+}
+.funnel-stage .fs-sub{font-size:0.6rem;font-weight:500;opacity:0.75;margin-top:2px;letter-spacing:0;}
+.funnel-pills{display:flex;flex-wrap:wrap;gap:7px;padding-top:4px;}
+.fpill{
+  font-size:0.72rem;padding:5px 12px;border-radius:20px;
+  border:1px solid;font-weight:500;white-space:nowrap;
+  transition:transform 0.15s;cursor:default;
+}
+.fpill:hover{transform:translateY(-1px);}
+.tofu-s{background:rgba(100,116,139,0.08);color:#475569;border-left:3px solid #94A3B8;}
+.mofu-s{background:var(--sky-10);color:var(--navy);border-left:3px solid var(--sky);}
+.bofu-s{background:rgba(5,150,105,0.08);color:#065f46;border-left:3px solid #059669;}
+.tofu-p{background:rgba(100,116,139,0.06);border-color:rgba(100,116,139,0.25);color:#475569;}
+.mofu-p{background:var(--sky-10);border-color:var(--sky-30);color:var(--navy);}
+.bofu-p{background:rgba(5,150,105,0.06);border-color:rgba(5,150,105,0.3);color:#065f46;}
+
+/* ── CONTENT CALENDAR TABLE ── */
+.cal-wrap{background:#fff;border:1px solid var(--border2);border-radius:var(--radius);overflow:hidden;}
+.cal-table{width:100%;border-collapse:collapse;}
+.cal-table thead tr{background:var(--navy);}
+.cal-table th{
+  padding:11px 14px;text-align:left;
+  font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.8);
+}
+.cal-table td{
+  padding:11px 14px;border-bottom:1px solid var(--border);
+  font-size:0.78rem;color:var(--text);vertical-align:middle;
+}
+.cal-table tr:last-child td{border-bottom:none;}
+.cal-table tr:nth-child(even) td{background:var(--surface);}
+.cal-table tr:hover td{background:var(--surface2);}
+.cal-week{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.5px;
+  color:var(--muted);white-space:nowrap;
+}
+/* type badges */
+.ctype{display:inline-block;font-size:0.6rem;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.3px;white-space:nowrap;}
+.ct-blog    {background:#EFF6FF;color:#1D4ED8;}
+.ct-video   {background:#FEF2F2;color:#B91C1C;}
+.ct-email   {background:#F0FDF4;color:#166534;}
+.ct-social  {background:#FFF7ED;color:#C2410C;}
+.ct-webinar {background:#F5F3FF;color:#6D28D9;}
+.ct-paid    {background:#FFFBEB;color:#92400E;}
+.ct-asset   {background:#FFF1F2;color:#9F1239;}
+.ct-guide   {background:#ECFEFF;color:#0E7490;}
+.sdot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle;}
+.ch-text{font-size:0.65rem;color:var(--muted);font-weight:500;}
+
+/* ── MAGNET GRID ── */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+@media(max-width:920px){.grid-3{grid-template-columns:1fr 1fr;}.grid-2{grid-template-columns:1fr;}}
+@media(max-width:580px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+
+.mcard{
+  border-radius:var(--radius);border:1px solid var(--border2);
+  overflow:hidden;background:#fff;
+  transition:box-shadow 0.2s,transform 0.18s;
+}
+.mcard:hover{box-shadow:0 8px 28px rgba(6,74,112,0.12);transform:translateY(-2px);}
+.mcard-top{padding:18px 18px 12px;display:flex;align-items:flex-start;gap:12px;}
+.mcard-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.mcard-title{font-size:0.88rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:4px;}
+.mcard-badge{font-size:0.6rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;}
+.mcard-body{padding:0 18px 16px;font-size:0.77rem;color:var(--muted);line-height:1.72;}
+.mcard-foot{
+  padding:9px 18px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;
+  font-size:0.63rem;color:var(--muted);font-weight:500;
 }
 
-/* KPI */
-
-.kpis{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-max-width:1100px;
-margin:40px auto;
+/* ── AD CARDS ── */
+.acard{
+  border-radius:var(--radius);border:1.5px solid var(--border2);
+  overflow:hidden;background:#fff;
+  transition:box-shadow 0.2s,transform 0.18s;
+}
+.acard:hover{box-shadow:0 8px 28px rgba(6,74,112,0.1);transform:translateY(-2px);}
+.acard-platform{
+  padding:9px 16px;border-bottom:1px solid var(--border);
+  font-size:0.63rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  display:flex;align-items:center;gap:7px;
+}
+.acard-body{padding:16px;}
+.acard-headline{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;}
+.acard-copy{font-size:0.78rem;color:var(--muted);line-height:1.72;margin-bottom:12px;}
+.acard-cta{
+  display:inline-block;font-size:0.7rem;font-weight:700;
+  padding:7px 18px;border-radius:6px;letter-spacing:0.3px;
+}
+.acard-audience{
+  padding:9px 16px;border-top:1px solid var(--border);
+  font-size:0.65rem;color:var(--muted);font-weight:500;
 }
 
-.kpi{
-background:white;
-border:1px solid #e5e5e5;
-padding:25px;
-border-radius:10px;
-text-align:center;
+/* ── SKY/NAVY UTILITIES ── */
+.bg-sky{background:var(--sky-10);}
+.bg-navy{background:var(--navy-8);}
+.c-sky{color:var(--sky);}
+.c-navy{color:var(--navy);}
+.border-sky{border-color:var(--sky) !important;}
+.border-navy{border-color:var(--navy) !important;}
+/* service colors */
+.c-ai{color:var(--ai);}
+.bg-ai{background:var(--ai-10);}
+.border-ai{border-color:var(--ai) !important;}
+.c-do{color:var(--devops);}
+.bg-do{background:var(--devops-10);}
+.border-do{border-color:var(--devops) !important;}
+.c-an{color:var(--analytics);}
+.bg-an{background:var(--analytics-10);}
+.border-an{border-color:var(--analytics) !important;}
+.c-ed{color:var(--edu);}
+.bg-ed{background:var(--edu-10);}
+.border-ed{border-color:var(--edu) !important;}
+
+/* ── FOOTER ── */
+.foot{
+  background:var(--navy);
+  padding:22px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
 }
-
-.kpi h2{
-font-size:34px;
-color:var(--navy);
-margin:0;
-}
-
-.kpi p{
-font-size:14px;
-margin-top:6px;
-color:#4A7A96;
-}
-
-/* TABS */
-
-.tabs{
-display:flex;
-justify-content:center;
-gap:10px;
-margin-top:30px;
-flex-wrap:wrap;
-}
-
-.tabs button{
-border:none;
-padding:12px 20px;
-background:white;
-border:1px solid #ddd;
-cursor:pointer;
-font-weight:600;
-}
-
-.tabs button.active{
-background:var(--sky);
-color:white;
-}
-
-/* PANELS */
-
-.panel{
-display:none;
-max-width:1100px;
-margin:auto;
-padding:40px 30px;
-}
-
-.panel.active{
-display:block;
-}
-
-/* FUNNEL */
-
-.funnel{
-display:flex;
-gap:20px;
-margin-top:30px;
-}
-
-.stage{
-flex:1;
-background:white;
-border:1px solid #e5e5e5;
-border-radius:10px;
-padding:20px;
-text-align:center;
-transition:.3s;
-}
-
-.stage:hover{
-transform:translateY(-5px);
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-/* TABLE */
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-}
-
-th{
-background:var(--navy);
-color:white;
-padding:10px;
-text-align:left;
-}
-
-td{
-padding:10px;
-border-bottom:1px solid #eee;
-}
-
-tr:nth-child(even){
-background:#f7fbff;
-}
-
-/* CTA */
-
-.cta{
-margin-top:40px;
-background:var(--navy);
-color:white;
-padding:30px;
-border-radius:10px;
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-align-items:center;
-}
-
-.cta button{
-background:var(--sky);
-color:white;
-border:none;
-padding:12px 20px;
-font-weight:600;
-cursor:pointer;
-}
-
-footer{
-background:var(--navy);
-color:white;
-text-align:center;
-padding:20px;
-margin-top:60px;
-}
-
+.foot-logo img{height:32px;display:block;opacity:0.85;}
+.foot-text{font-size:0.7rem;color:rgba(255,255,255,0.5);font-weight:400;}
+.foot-text strong{color:rgba(255,255,255,0.8);}
 </style>
 </head>
-
 <body>
 
-<header class="header">
-
-<img src="Sails_Logo_Blue_and_White.png" alt="Sails Software Logo">
-
-<div>
-90-Day IT Leadership Growth Strategy Dashboard
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    <img src="data:image/png;base64,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" alt="Sails Software">
+  </div>
+  <div class="topbar-title">
+    <span>Content Strategy Hub</span>
+    90-Day Plan · All Service Lines · Q1 2025
+  </div>
 </div>
 
-</header>
-
-
-<section class="hero">
-
-<h1>SAILS Software 90-Day IT Leadership Growth Strategy</h1>
-
-<p>
-ABM-led, LinkedIn-first demand generation strategy targeting CIO, CTO, CDO and Director IT leaders across enterprise, healthcare, financial services and higher education organizations.
-</p>
-
-</section>
-
-
-<section class="kpis">
-
-<div class="kpi">
-<h2 class="counter" data-target="75">0</h2>
-<p>Executive LinkedIn Post Impressions Target</p>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">📋 Sails Software Inc · Full-Funnel Content Plan</div>
+    <h1>Content Calendar, Lead Magnets<br>& Ad Messaging for <em>Every Service Line</em></h1>
+    <p class="hero-sub">A complete 90-day content system built for CIO · CTO · Director IT audiences — covering HCM, AI Services, Cloud, DevOps, Analytics, and Higher Education across all channels.</p>
+    <div class="hero-badges">
+      <span class="hero-badge"><span class="dot" style="background:var(--sky)"></span>HCM Platform</span>
+      <span class="hero-badge"><span class="dot" style="background:#A78BFA"></span>AI Services</span>
+      <span class="hero-badge"><span class="dot" style="background:var(--sky)"></span>Cloud Services</span>
+      <span class="hero-badge"><span class="dot" style="background:#FCD34D"></span>DevOps</span>
+      <span class="hero-badge"><span class="dot" style="background:#6EE7B7"></span>Analytics</span>
+      <span class="hero-badge"><span class="dot" style="background:#FCA5A5"></span>Higher Education</span>
+    </div>
+  </div>
 </div>
 
-<div class="kpi">
-<h2 class="counter" data-target="120">0</h2>
-<p>Director IT MQL Target</p>
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="showTab('hcm',this)"><span class="tb-dot" style="background:var(--sky)"></span>🧩 HCM Platform</button>
+    <button class="tab-btn" onclick="showTab('ai',this)"><span class="tb-dot" style="background:#A78BFA"></span>🤖 AI Services</button>
+    <button class="tab-btn" onclick="showTab('cloud',this)"><span class="tb-dot" style="background:var(--sky)"></span>☁️ Cloud Services</button>
+    <button class="tab-btn" onclick="showTab('devops',this)"><span class="tb-dot" style="background:var(--devops)"></span>🔧 DevOps</button>
+    <button class="tab-btn" onclick="showTab('analytics',this)"><span class="tb-dot" style="background:var(--analytics)"></span>📈 Analytics</button>
+    <button class="tab-btn" onclick="showTab('edu',this)"><span class="tb-dot" style="background:var(--edu)"></span>🏫 Higher Education</button>
+  </div>
 </div>
 
-<div class="kpi">
-<h2 class="counter" data-target="45">0</h2>
-<p>CIO Roundtable Attendees</p>
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  HCM PANEL                                            -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="panel-hcm" class="panel active">
+<div class="wrap">
+  <div class="panel-header">
+    <div class="ph-icon">🧩</div>
+    <div>
+      <div class="ph-title">HCM Platform</div>
+      <div class="ph-desc">Human Capital Management — AI-powered recruiting, onboarding, payroll, performance & compliance. Built for enterprise IT buyers who need security-first, cloud-native architecture.</div>
+      <div class="ph-tags"><span class="ph-tag">Director IT</span><span class="ph-tag">CIO</span><span class="ph-tag">CHRO</span><span class="ph-tag">500–10K Employees</span><span class="ph-tag">Enterprise</span></div>
+    </div>
+  </div>
+
+  <!-- FUNNEL -->
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>Funnel Stages & Content Types</div>
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-stage tofu-s"><div>TOFU</div><div class="fs-sub">Awareness</div></div>
+      <div class="funnel-pills">
+        <span class="fpill tofu-p">Blog: AI in HR 2025</span>
+        <span class="fpill tofu-p">LinkedIn exec thought leadership</span>
+        <span class="fpill tofu-p">YouTube: What is Cloud HCM?</span>
+        <span class="fpill tofu-p">Guest: SHRM / HR Dive</span>
+        <span class="fpill tofu-p">Social: HCM stat infographics</span>
+        <span class="fpill tofu-p">Podcast: HR Tech Trends</span>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-stage mofu-s" style="background:var(--sky-10);color:var(--navy);"><div>MOFU</div><div class="fs-sub">Evaluation</div></div>
+      <div class="funnel-pills">
+        <span class="fpill mofu-p">Guide: HCM Vendor Selection Checklist</span>
+        <span class="fpill mofu-p">Webinar: HCM Implementation Realities</span>
+        <span class="fpill mofu-p">Case study: 40% HR admin reduction</span>
+        <span class="fpill mofu-p">ROI Calculator: Cloud HCM savings</span>
+        <span class="fpill mofu-p">Comparison: Sails vs SAP / Workday</span>
+        <span class="fpill mofu-p">Email nurture: 7-part IT Leader track</span>
+      </div>
+    </div>
+    <div class="funnel-row" style="margin-bottom:0">
+      <div class="funnel-stage bofu-s"><div>BOFU</div><div class="fs-sub">Decision</div></div>
+      <div class="funnel-pills">
+        <span class="fpill bofu-p">Live personalised HCM demo</span>
+        <span class="fpill bofu-p">Executive Briefing Center (EBC)</span>
+        <span class="fpill bofu-p">Custom ROI proposal deck</span>
+        <span class="fpill bofu-p">Reference call: existing CIO/Dir IT</span>
+        <span class="fpill bofu-p">Post-demo 5-touch email sequence</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>90-Day Content Calendar</div>
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead><tr><th>Week</th><th>Content Piece</th><th>Type</th><th>Channel</th><th>Funnel</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td class="cal-week">Wk 1</td><td>10 Ways AI is Transforming HR Operations in 2025</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download HCM Guide</td></tr>
+        <tr><td class="cal-week">Wk 1</td><td>LinkedIn exec post: "Why legacy HCM is costing your org millions"</td><td><span class="ctype ct-social">Social</span></td><td class="ch-text">LinkedIn Organic</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Follow + engage</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>Cloud vs On-Premise HCM: The 2025 IT Decision Guide (gated)</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">LinkedIn LGF + Email</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Download free guide</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>Video explainer: "What is an AI-Powered HCM?" (5 min)</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">YouTube + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Book a demo</td></tr>
+        <tr><td class="cal-week">Wk 3</td><td>5 Signs Your IT Infrastructure Is Holding HR Back</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + Email</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Take readiness quiz</td></tr>
+        <tr><td class="cal-week">Wk 4</td><td>Webinar: Cloud HCM for IT Leaders — Implementation Without the Pain</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">LinkedIn + Email</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Register now</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>HCM ROI Calculator — "Your cloud savings in 60 seconds"</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">Website + Google Ads</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Calculate my ROI</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>Case study: How [Enterprise] cut HR admin time by 40%</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">ABM email + LinkedIn</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Read case study</td></tr>
+        <tr><td class="cal-week">Wk 6</td><td>Email nurture Wk 2: "The hidden cost of disconnected HR systems"</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">Email sequence</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>See the ROI data</td></tr>
+        <tr><td class="cal-week">Wk 7</td><td>Sails HCM vs SAP vs Workday: IT Leader's Comparison Guide</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + Google Ads LP</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Talk to an expert</td></tr>
+        <tr><td class="cal-week">Wk 8</td><td>LinkedIn paid: "Is your HCM holding back your CIO agenda?"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Sponsored</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Get IT leader guide</td></tr>
+        <tr><td class="cal-week">Wk 9</td><td>15 Questions to Ask Before Signing Your HCM Contract</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">Retargeting + Email</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Book your demo</td></tr>
+        <tr><td class="cal-week">Wk 10</td><td>Customer video testimonial: Director IT success story (4 min)</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">LinkedIn + Website</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>See Sails in action</td></tr>
+        <tr><td class="cal-week">Wk 11</td><td>Post-demo email touch 3: "Your custom ROI summary is ready"</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">CRM automation</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Schedule next steps</td></tr>
+        <tr><td class="cal-week">Wk 12</td><td>Webinar: Live HCM Demo — AI-Powered HR in 45 Minutes</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">Email + LinkedIn Paid</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Reserve your seat</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEAD MAGNETS -->
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>Lead Magnet Ideas</div>
+  <div class="grid-3">
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">📋</div><div><div class="mcard-title">IT Leader's HCM Vendor Selection Checklist</div><div class="mcard-badge c-sky">Guide · MOFU</div></div></div>
+      <div class="mcard-body">50-point checklist covering security, integration, scalability, and compliance. Includes a CIO presentation template to justify the vendor choice upward. Framed for Director IT audiences.</div>
+      <div class="mcard-foot"><span>PDF + editable XLSX</span><span>Gate: Name + Email + Co. Size</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">🧮</div><div><div class="mcard-title">Cloud HCM ROI Calculator</div><div class="mcard-badge c-sky">Interactive Tool · MOFU</div></div></div>
+      <div class="mcard-body">Enter headcount, current admin hours, and legacy costs. Generates a personalised savings projection instantly. Email-gated PDF results create a natural sales follow-up hook.</div>
+      <div class="mcard-foot"><span>Web tool + PDF report</span><span>Gate: Email for full report</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">📊</div><div><div class="mcard-title">2025 State of AI in HR — Benchmark Report</div><div class="mcard-badge c-sky">Research · TOFU/MOFU</div></div></div>
+      <div class="mcard-body">Survey-backed research on AI adoption in HR. Includes benchmarks by company size and industry. CIOs use this to justify AI investment internally — Sails cited throughout as thought leader.</div>
+      <div class="mcard-foot"><span>20-page PDF</span><span>Gate: Full contact form</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">🎯</div><div><div class="mcard-title">HR Tech Readiness Assessment</div><div class="mcard-badge c-sky">Quiz · TOFU</div></div></div>
+      <div class="mcard-body">10-question interactive quiz scoring their current HR tech stack. Output: personalised readiness score + 3 recommended next steps. High conversion — low commitment, instant value.</div>
+      <div class="mcard-foot"><span>Web quiz</span><span>Gate: Email for full results</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">📄</div><div><div class="mcard-title">HCM RFP Template Pack</div><div class="mcard-badge c-sky">Template · BOFU</div></div></div>
+      <div class="mcard-body">Ready-to-use RFP for IT teams evaluating HCM vendors. 80 pre-written questions, scoring rubric, and CIO summary slide. Downloads signal strong purchase intent — trigger immediate sales alert.</div>
+      <div class="mcard-foot"><span>DOCX + XLSX</span><span>Gate: Full form (7 fields)</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">▶️</div><div><div class="mcard-title">On-Demand Demo: Sails HCM in 15 Minutes</div><div class="mcard-badge c-sky">Video Demo · BOFU</div></div></div>
+      <div class="mcard-body">Pre-recorded product walkthrough for prospects not ready for a live call. Covers onboarding, payroll, analytics, and AI features. Gated — creates MQL signal from high-intent viewers.</div>
+      <div class="mcard-foot"><span>Gated video page</span><span>Gate: Name + Email + Job Title</span></div>
+    </div>
+  </div>
+
+  <!-- ADS -->
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>Ad Messaging</div>
+  <div class="grid-2">
+    <div class="acard border-sky">
+      <div class="acard-platform c-navy">🔵 LinkedIn Sponsored — Director IT · TOFU/MOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Your CIO asked for a modern HR stack. Here's what that actually requires."</div>
+        <div class="acard-copy">Most HCM migrations fail not because of the software — but because IT wasn't in the room. Sails is the only cloud HCM platform built with IT architecture in mind. Download our free IT Leader's Cloud HCM Guide.</div>
+        <span class="acard-cta" style="background:var(--sky);color:#fff">Download Free Guide →</span>
+      </div>
+      <div class="acard-audience">🎯 Director IT, VP IT, IT Manager · 500–5,000 employees · All industries</div>
+    </div>
+    <div class="acard border-sky">
+      <div class="acard-platform c-navy">🔍 Google Search — High Intent · MOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">Cloud HCM That IT Teams Actually Love</div>
+        <div class="acard-copy">Tired of HCM platforms that create IT tickets instead of reducing them? Sails Cloud HCM integrates with your existing stack in days, not months. See your custom ROI in 60 seconds — no commitment needed.</div>
+        <span class="acard-cta" style="background:var(--navy);color:#fff">Calculate My Savings →</span>
+      </div>
+      <div class="acard-audience">🎯 Keywords: "cloud HCM software" · "best HRIS for enterprise" · "HCM platform migration"</div>
+    </div>
+    <div class="acard border-sky">
+      <div class="acard-platform c-navy">🔄 LinkedIn Retargeting — BOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Still evaluating HCM vendors? See how [Company] made the decision in 3 weeks."</div>
+        <div class="acard-copy">A Director IT at a 2,000-person firm shortlisted 6 vendors, ran a 2-week POC with Sails, and had an executive-approved proposal in 21 days. Watch the 4-minute case study and see the exact process.</div>
+        <span class="acard-cta" style="background:var(--sky-18);color:var(--navy);font-weight:700">Watch Case Study →</span>
+      </div>
+      <div class="acard-audience">🎯 Website visitors — HCM pages, pricing page, demo page (last 30 days)</div>
+    </div>
+    <div class="acard border-sky">
+      <div class="acard-platform c-navy">✉️ ABM Email — Director IT · MOFU (personalised by BDR)</div>
+      <div class="acard-body">
+        <div class="acard-headline">Subject: Quick question about [Company]'s HR infrastructure</div>
+        <div class="acard-copy">Hi [First Name] — I noticed [Company] is scaling quickly and still running [Legacy System]. Most Director IT teams we speak with say the integration overhead alone costs 15–20 hrs/month per admin.<br><br>We built Sails specifically to solve that. Would a 20-minute cloud architecture conversation be worth your time this week?</div>
+        <span class="acard-cta" style="background:var(--sky-18);color:var(--navy);font-weight:700">Book 20-Min Call →</span>
+      </div>
+      <div class="acard-audience">🎯 Director IT at top 50 ABM target accounts · Named BDR sender</div>
+    </div>
+  </div>
+</div>
 </div>
 
-<div class="kpi">
-<h2 class="counter" data-target="800">0</h2>
-<p>Pipeline Target ($K ARR)</p>
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  AI SERVICES PANEL                                    -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="panel-ai" class="panel">
+<div class="wrap">
+  <div class="panel-header" style="background:linear-gradient(135deg,#3B0764,#6D28D9)">
+    <div class="ph-icon">🤖</div>
+    <div>
+      <div class="ph-title">AI Services</div>
+      <div class="ph-desc">AI consulting, ML model deployment, intelligent automation, LLM integration, and AI-powered workflow design. Helping IT leaders move from AI pilot to production in 6–12 weeks.</div>
+      <div class="ph-tags"><span class="ph-tag">CTO</span><span class="ph-tag">CIO</span><span class="ph-tag">Director Digital Transformation</span><span class="ph-tag">VP Engineering</span></div>
+    </div>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--ai)"></span>Funnel Stages</div>
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-stage tofu-s"><div>TOFU</div><div class="fs-sub">Awareness</div></div>
+      <div class="funnel-pills">
+        <span class="fpill tofu-p">Blog: Enterprise AI adoption 2025</span>
+        <span class="fpill tofu-p">LinkedIn: CTO AI thought leadership</span>
+        <span class="fpill tofu-p">YouTube: AI automation explainers</span>
+        <span class="fpill tofu-p">Podcast: AI in the enterprise</span>
+        <span class="fpill tofu-p">Guest: TechTarget / InformationWeek</span>
+        <span class="fpill tofu-p">Social: AI ROI statistics</span>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-stage mofu-s" style="background:var(--ai-10);color:#3B0764;border-left:3px solid var(--ai)"><div>MOFU</div><div class="fs-sub">Evaluation</div></div>
+      <div class="funnel-pills">
+        <span class="fpill" style="background:var(--ai-10);border-color:rgba(124,58,237,0.3);color:#4C1D95">AI Readiness Assessment</span>
+        <span class="fpill" style="background:var(--ai-10);border-color:rgba(124,58,237,0.3);color:#4C1D95">Webinar: AI Implementation Roadmap</span>
+        <span class="fpill" style="background:var(--ai-10);border-color:rgba(124,58,237,0.3);color:#4C1D95">Case study: AI automation saving $2M</span>
+        <span class="fpill" style="background:var(--ai-10);border-color:rgba(124,58,237,0.3);color:#4C1D95">Build vs Buy AI Guide</span>
+        <span class="fpill" style="background:var(--ai-10);border-color:rgba(124,58,237,0.3);color:#4C1D95">AI use-case value calculator</span>
+      </div>
+    </div>
+    <div class="funnel-row" style="margin-bottom:0">
+      <div class="funnel-stage bofu-s"><div>BOFU</div><div class="fs-sub">Decision</div></div>
+      <div class="funnel-pills">
+        <span class="fpill bofu-p">Free 2-hr AI Discovery Workshop</span>
+        <span class="fpill bofu-p">Paid AI Proof-of-Concept (POC)</span>
+        <span class="fpill bofu-p">CTO Executive Briefing (EBC)</span>
+        <span class="fpill bofu-p">Proposal: 90-day AI roadmap</span>
+        <span class="fpill bofu-p">Reference: Existing AI client call</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--ai)"></span>90-Day Content Calendar</div>
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead><tr><th>Week</th><th>Content Piece</th><th>Type</th><th>Channel</th><th>Funnel</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td class="cal-week">Wk 1</td><td>The CTO's Guide to Deploying Enterprise AI in 2025</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download AI Assessment</td></tr>
+        <tr><td class="cal-week">Wk 1</td><td>LinkedIn exec: "3 AI use cases every CTO should already be running"</td><td><span class="ctype ct-social">Social</span></td><td class="ch-text">LinkedIn Organic</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Comment / engage</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>AI Readiness Self-Assessment: Where is your org on the maturity curve?</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">LinkedIn LGF + Email</td><td><span class="sdot" style="background:var(--ai)"></span>MOFU</td><td>Take the assessment</td></tr>
+        <tr><td class="cal-week">Wk 3</td><td>Build vs Buy vs Partner: The Enterprise AI Decision Framework (gated)</td><td><span class="ctype ct-guide">Guide</span></td><td class="ch-text">ABM + Email + Paid</td><td><span class="sdot" style="background:var(--ai)"></span>MOFU</td><td>Download framework</td></tr>
+        <tr><td class="cal-week">Wk 4</td><td>Webinar: AI Implementation Roadmap — From Pilot to Production</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">LinkedIn + Email</td><td><span class="sdot" style="background:var(--ai)"></span>MOFU</td><td>Register now</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>Video: 5 AI Automation Use Cases That Deliver ROI in 90 Days</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">YouTube + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Book AI discovery call</td></tr>
+        <tr><td class="cal-week">Wk 6</td><td>Case study: How [Firm] automated 60% of IT service requests with Sails AI</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">ABM email + Retargeting</td><td><span class="sdot" style="background:var(--ai)"></span>MOFU</td><td>Read case study</td></tr>
+        <tr><td class="cal-week">Wk 7</td><td>LinkedIn paid: "Your competitors are already using AI. Are you?"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Sponsored</td><td><span class="sdot" style="background:var(--ai)"></span>MOFU</td><td>Get AI use-case guide</td></tr>
+        <tr><td class="cal-week">Wk 8</td><td>AI Use-Case Value Calculator: Estimate your automation savings</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">Website + Google Ads</td><td><span class="sdot" style="background:var(--ai)"></span>MOFU</td><td>Calculate my savings</td></tr>
+        <tr><td class="cal-week">Wk 9</td><td>Email: Invitation to a free 2-hour AI Discovery Workshop</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">ABM email sequence</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Reserve my spot</td></tr>
+        <tr><td class="cal-week">Wk 10</td><td>The AI Adoption Mistakes CTOs Make (And How to Avoid Them)</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download AI Roadmap</td></tr>
+        <tr><td class="cal-week">Wk 11</td><td>LinkedIn retargeting: "Sails AI POC — Proven results in 6 weeks"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Retargeting</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Start my AI POC</td></tr>
+        <tr><td class="cal-week">Wk 12</td><td>Webinar: Live AI Demo — Intelligent Automation for Enterprise IT</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">Email + LinkedIn Paid</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Watch live demo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--ai)"></span>Lead Magnets</div>
+  <div class="grid-3">
+    <div class="mcard border-ai">
+      <div class="mcard-top"><div class="mcard-icon bg-ai">🧠</div><div><div class="mcard-title">Enterprise AI Readiness Assessment</div><div class="mcard-badge c-ai">Interactive Tool · TOFU/MOFU</div></div></div>
+      <div class="mcard-body">15-question diagnostic scoring AI readiness across data, talent, infrastructure, and governance. Output: maturity score + customised AI roadmap. Perfect LinkedIn LGF asset — high completion rate.</div>
+      <div class="mcard-foot"><span>Web tool + PDF report</span><span>Gate: Email for full report</span></div>
+    </div>
+    <div class="mcard border-ai">
+      <div class="mcard-top"><div class="mcard-icon bg-ai">🗺️</div><div><div class="mcard-title">CTO's 90-Day AI Implementation Playbook</div><div class="mcard-badge c-ai">Guide · MOFU</div></div></div>
+      <div class="mcard-body">Step-by-step playbook from AI pilot to production. Covers use case selection, vendor evaluation, change management, and KPI frameworks. Gartner data cited throughout for CxO credibility.</div>
+      <div class="mcard-foot"><span>28-page PDF</span><span>Gate: Full contact form</span></div>
+    </div>
+    <div class="mcard border-ai">
+      <div class="mcard-top"><div class="mcard-icon bg-ai">💡</div><div><div class="mcard-title">Top 20 Enterprise AI Use Cases by ROI</div><div class="mcard-badge c-ai">Report · TOFU</div></div></div>
+      <div class="mcard-body">Ranked list of AI use cases with avg implementation cost, time-to-value, and ROI range. Helps CTOs build the internal business case. Widely shareable at C-suite level — viral among IT LinkedIn circles.</div>
+      <div class="mcard-foot"><span>PDF infographic</span><span>Gate: Email only</span></div>
+    </div>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--ai)"></span>Ad Messaging</div>
+  <div class="grid-2">
+    <div class="acard border-ai">
+      <div class="acard-platform c-ai">💜 LinkedIn Sponsored — CTO / TOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Most enterprise AI projects fail in Year 1. Here's the pattern we've seen across 40+ deployments."</div>
+        <div class="acard-copy">The gap isn't the AI model — it's the implementation layer. Sails AI Services has deployed enterprise AI for companies from 500 to 50,000 employees. We've written the playbook. Get it free.</div>
+        <span class="acard-cta" style="background:var(--ai);color:#fff">Download AI Playbook →</span>
+      </div>
+      <div class="acard-audience">🎯 CTO, VP Engineering, Director Digital Transformation · Tech, FS, Healthcare</div>
+    </div>
+    <div class="acard border-ai">
+      <div class="acard-platform c-ai">🔍 Google Search — High Intent</div>
+      <div class="acard-body">
+        <div class="acard-headline">Enterprise AI Services — Pilot to Production in 6 Weeks</div>
+        <div class="acard-copy">Skip the 18-month AI timeline. Sails delivers production-ready AI automation in 6–12 weeks with a proven implementation framework. Free AI Discovery Workshop — no commitment required.</div>
+        <span class="acard-cta" style="background:var(--ai);color:#fff">Book Free AI Workshop →</span>
+      </div>
+      <div class="acard-audience">🎯 "enterprise AI services" · "AI implementation company" · "AI automation consulting"</div>
+    </div>
+    <div class="acard border-ai">
+      <div class="acard-platform c-ai">✉️ ABM Email — CTO / MOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">Subject: [Company]'s AI roadmap — a thought</div>
+        <div class="acard-copy">Hi [First Name] — I've been following [Company]'s growth and wanted to share something. Most CTOs we speak with have 2–3 AI pilots running but are struggling to move any of them to production.<br><br>We've solved that problem 40+ times. Would a 30-minute AI architecture conversation be useful?</div>
+        <span class="acard-cta" style="background:var(--ai-10);color:var(--ai);font-weight:700">Book 30-Min Conversation →</span>
+      </div>
+      <div class="acard-audience">🎯 CTO at ABM target accounts · Personalised by CEO or senior BDR</div>
+    </div>
+    <div class="acard border-ai">
+      <div class="acard-platform c-ai">🔄 LinkedIn Retargeting — BOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Still in AI pilot stage? Here's what separates the teams that ship from those that don't."</div>
+        <div class="acard-copy">Sails AI POC delivers a working, production-ready AI model in 6 weeks — with full handoff to your internal team. 40+ enterprise deployments. Starts at a fixed price. No surprises.</div>
+        <span class="acard-cta" style="background:var(--ai-10);color:var(--ai);font-weight:700">Start My AI POC →</span>
+      </div>
+      <div class="acard-audience">🎯 AI Services page visitors + blog readers (last 45 days)</div>
+    </div>
+  </div>
+</div>
 </div>
 
-</section>
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  CLOUD PANEL                                          -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="panel-cloud" class="panel">
+<div class="wrap">
+  <div class="panel-header" style="background:linear-gradient(135deg,#064a70,#0284c7)">
+    <div class="ph-icon">☁️</div>
+    <div>
+      <div class="ph-title">Cloud Services</div>
+      <div class="ph-desc">Cloud migration, cloud-native architecture, infrastructure management, and SaaS implementation services. Specialising in enterprise migrations with fixed-scope, fixed-price engagements.</div>
+      <div class="ph-tags"><span class="ph-tag">CIO</span><span class="ph-tag">Director IT</span><span class="ph-tag">VP Infrastructure</span><span class="ph-tag">Solutions Architect</span><span class="ph-tag">Mid-Market to Enterprise</span></div>
+    </div>
+  </div>
 
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>Funnel Stages</div>
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-stage tofu-s"><div>TOFU</div><div class="fs-sub">Awareness</div></div>
+      <div class="funnel-pills">
+        <span class="fpill tofu-p">Blog: Cloud migration cost myths</span>
+        <span class="fpill tofu-p">LinkedIn: CIO cloud journey posts</span>
+        <span class="fpill tofu-p">Video: Cloud architecture explained</span>
+        <span class="fpill tofu-p">Social: Cloud TCO statistics</span>
+        <span class="fpill tofu-p">Guest: CIO.com / TechTarget</span>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-stage mofu-s" style="background:var(--sky-10);color:var(--navy);"><div>MOFU</div><div class="fs-sub">Evaluation</div></div>
+      <div class="funnel-pills">
+        <span class="fpill mofu-p">Cloud Migration Playbook</span>
+        <span class="fpill mofu-p">Webinar: Cloud for IT Leaders</span>
+        <span class="fpill mofu-p">Cloud Readiness Assessment</span>
+        <span class="fpill mofu-p">On-Premise vs Cloud TCO Calculator</span>
+        <span class="fpill mofu-p">6-part cloud migration email track</span>
+      </div>
+    </div>
+    <div class="funnel-row" style="margin-bottom:0">
+      <div class="funnel-stage bofu-s"><div>BOFU</div><div class="fs-sub">Decision</div></div>
+      <div class="funnel-pills">
+        <span class="fpill bofu-p">Free Cloud Architecture Review</span>
+        <span class="fpill bofu-p">Migration scoping workshop</span>
+        <span class="fpill bofu-p">Fixed-price migration proposal</span>
+        <span class="fpill bofu-p">CIO Executive Briefing</span>
+        <span class="fpill bofu-p">Live CIO peer reference call</span>
+      </div>
+    </div>
+  </div>
 
-<div class="tabs">
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>90-Day Content Calendar</div>
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead><tr><th>Week</th><th>Content Piece</th><th>Type</th><th>Channel</th><th>Funnel</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td class="cal-week">Wk 1</td><td>The 5 Cloud Migration Myths That Cost IT Teams 6 Months</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download migration guide</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>Cloud Readiness Assessment: Are you ready to migrate?</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">LinkedIn LGF + Ads</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Take the assessment</td></tr>
+        <tr><td class="cal-week">Wk 3</td><td>On-Premise vs Cloud: Total Cost of Ownership Calculator</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">Google Ads + Website</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Run my TCO analysis</td></tr>
+        <tr><td class="cal-week">Wk 4</td><td>Webinar: Cloud Migration Without the Horror Stories</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">LinkedIn + Email</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Register free</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>Cloud Migration Playbook: 6-Phase Implementation Guide (gated)</td><td><span class="ctype ct-guide">Guide</span></td><td class="ch-text">ABM email + LinkedIn</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Download playbook</td></tr>
+        <tr><td class="cal-week">Wk 6</td><td>Video: Sails Cloud Architecture — How it works (Under the Hood)</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">YouTube + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Book architecture review</td></tr>
+        <tr><td class="cal-week">Wk 7</td><td>Case study: [Company] migrated 12 legacy systems in 90 days</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">ABM + Retargeting</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Read full case study</td></tr>
+        <tr><td class="cal-week">Wk 8</td><td>LinkedIn paid: "Stop paying for cloud infrastructure you're not using"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Sponsored</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Get cloud cost audit</td></tr>
+        <tr><td class="cal-week">Wk 9</td><td>Google Ads: "Free cloud architecture review — no commitment"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">Google Ads</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Book free review</td></tr>
+        <tr><td class="cal-week">Wk 10</td><td>Email: Free 30-min Cloud Architecture Review — personal invite</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">ABM email sequence</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Book my free review</td></tr>
+        <tr><td class="cal-week">Wk 11</td><td>Cloud Security Checklist for IT Leaders: 60-Point Audit</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + Retargeting</td><td><span class="sdot" style="background:var(--sky)"></span>MOFU</td><td>Download security guide</td></tr>
+        <tr><td class="cal-week">Wk 12</td><td>Webinar: Cloud Migration Live Q&A with Sails Cloud Architect</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">Email + LinkedIn</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Reserve a seat</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<button class="active" onclick="openTab('audience',this)">Audience</button>
-<button onclick="openTab('funnel',this)">Buying Funnel</button>
-<button onclick="openTab('calendar',this)">Content Plan</button>
-
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--sky)"></span>Lead Magnets + Ad Messaging</div>
+  <div class="grid-3">
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">☁️</div><div><div class="mcard-title">Cloud Migration Playbook — 6-Phase Guide</div><div class="mcard-badge c-sky">Guide · MOFU</div></div></div>
+      <div class="mcard-body">Discovery → Assessment → Design → Migration → Optimisation → Governance. Includes timelines, team structures, risk register template, and CIO sign-off checklist.</div>
+      <div class="mcard-foot"><span>32-page PDF</span><span>Gate: Full form</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">💰</div><div><div class="mcard-title">Cloud TCO Calculator — On-Premise vs Cloud</div><div class="mcard-badge c-sky">Tool · MOFU</div></div></div>
+      <div class="mcard-body">Input current infrastructure costs and headcount. Outputs 3-year TCO comparison with sensitivity analysis. Board-ready visualisations included — high conversion for CFO-adjacent buyers.</div>
+      <div class="mcard-foot"><span>Web tool + Excel</span><span>Gate: Email for full report</span></div>
+    </div>
+    <div class="mcard border-sky">
+      <div class="mcard-top"><div class="mcard-icon" style="background:var(--sky-10)">🔒</div><div><div class="mcard-title">Cloud Security & Compliance Checklist</div><div class="mcard-badge c-sky">Checklist · MOFU</div></div></div>
+      <div class="mcard-body">60-point audit covering IAM, encryption, compliance (SOC2, GDPR, HIPAA), incident response, and vendor assessment. Reaches CISO-level buyers in the same company simultaneously.</div>
+      <div class="mcard-foot"><span>PDF + editable DOCX</span><span>Gate: Name + email + role</span></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="acard border-sky">
+      <div class="acard-platform c-navy">🌐 LinkedIn — Director IT / MOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">"We've seen 200+ cloud migrations. The ones that fail share one thing in common."</div>
+        <div class="acard-copy">They skipped the architecture review. Sails cloud architects have moved 200+ enterprise teams to cloud — and the single biggest predictor of success is a thorough pre-migration assessment. Ours is free, no commitment.</div>
+        <span class="acard-cta" style="background:var(--sky);color:#fff">Book Free Architecture Review →</span>
+      </div>
+      <div class="acard-audience">🎯 Director IT, VP Infrastructure, Solutions Architect · 500–10K employees</div>
+    </div>
+    <div class="acard border-sky">
+      <div class="acard-platform c-navy">🔍 Google Search — High Intent / BOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">Cloud Migration Services Delivered in 90 Days</div>
+        <div class="acard-copy">No 18-month timelines. No surprise costs. Sails Cloud Services delivers enterprise migration with fixed-scope, fixed-price engagements. Free TCO analysis before you commit to anything.</div>
+        <span class="acard-cta" style="background:var(--navy);color:#fff">Get Free TCO Analysis →</span>
+      </div>
+      <div class="acard-audience">🎯 "cloud migration services" · "enterprise cloud consulting" · "managed cloud services"</div>
+    </div>
+  </div>
+</div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  DEVOPS PANEL                                         -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="panel-devops" class="panel">
+<div class="wrap">
+  <div class="panel-header" style="background:linear-gradient(135deg,#78350F,#D97706)">
+    <div class="ph-icon">🔧</div>
+    <div>
+      <div class="ph-title">DevOps Services</div>
+      <div class="ph-desc">DevOps transformation, CI/CD pipeline implementation, infrastructure-as-code, containerisation, and platform engineering. Measurable results in 6–10 weeks.</div>
+      <div class="ph-tags"><span class="ph-tag">CTO</span><span class="ph-tag">Director IT</span><span class="ph-tag">DevOps Lead</span><span class="ph-tag">Solutions Architect</span><span class="ph-tag">200–5,000 Employees</span></div>
+    </div>
+  </div>
 
-<div id="audience" class="panel active">
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--devops)"></span>Funnel Stages</div>
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-stage tofu-s"><div>TOFU</div><div class="fs-sub">Awareness</div></div>
+      <div class="funnel-pills">
+        <span class="fpill tofu-p">Blog: DevOps maturity for IT leaders</span>
+        <span class="fpill tofu-p">LinkedIn: CTO pipeline posts</span>
+        <span class="fpill tofu-p">YouTube: CI/CD explained simply</span>
+        <span class="fpill tofu-p">Reddit: r/devops organic content</span>
+        <span class="fpill tofu-p">Social: Deployment frequency stats</span>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-stage" style="background:var(--devops-10);color:#92400E;border-left:3px solid var(--devops);border-radius:10px;padding:10px 8px;text-align:center;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;"><div>MOFU</div><div class="fs-sub">Evaluation</div></div>
+      <div class="funnel-pills">
+        <span class="fpill" style="background:var(--devops-10);border-color:rgba(217,119,6,0.3);color:#92400E">DevOps Implementation Playbook</span>
+        <span class="fpill" style="background:var(--devops-10);border-color:rgba(217,119,6,0.3);color:#92400E">Webinar: DevOps for execs</span>
+        <span class="fpill" style="background:var(--devops-10);border-color:rgba(217,119,6,0.3);color:#92400E">DevOps Maturity Assessment</span>
+        <span class="fpill" style="background:var(--devops-10);border-color:rgba(217,119,6,0.3);color:#92400E">Case study: 80% faster deployments</span>
+        <span class="fpill" style="background:var(--devops-10);border-color:rgba(217,119,6,0.3);color:#92400E">5-part DevOps transformation email</span>
+      </div>
+    </div>
+    <div class="funnel-row" style="margin-bottom:0">
+      <div class="funnel-stage bofu-s"><div>BOFU</div><div class="fs-sub">Decision</div></div>
+      <div class="funnel-pills">
+        <span class="fpill bofu-p">Free DevOps maturity workshop</span>
+        <span class="fpill bofu-p">CI/CD pipeline POC pilot</span>
+        <span class="fpill bofu-p">14-day DevOps platform trial</span>
+        <span class="fpill bofu-p">DevOps transformation roadmap proposal</span>
+      </div>
+    </div>
+  </div>
 
-<h2>IT Leadership Buying Hierarchy</h2>
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--devops)"></span>90-Day Content Calendar</div>
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead><tr><th>Week</th><th>Content Piece</th><th>Type</th><th>Channel</th><th>Funnel</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td class="cal-week">Wk 1</td><td>What Is DevOps? A Plain-English Guide for IT Leaders</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Take maturity assessment</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>DevOps Maturity Assessment: Score your team in 10 minutes</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">LinkedIn LGF + Email</td><td><span class="sdot" style="background:var(--devops)"></span>MOFU</td><td>Get your score</td></tr>
+        <tr><td class="cal-week">Wk 3</td><td>YouTube: CI/CD Pipeline Explained for CTOs (5 min)</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">YouTube + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download DevOps playbook</td></tr>
+        <tr><td class="cal-week">Wk 4</td><td>DevOps Implementation Playbook: Mid-Market Edition (gated)</td><td><span class="ctype ct-guide">Guide</span></td><td class="ch-text">Google Ads + ABM</td><td><span class="sdot" style="background:var(--devops)"></span>MOFU</td><td>Download free</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>Case study: [Company] cut deployment time from 2 weeks to 4 hours</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">ABM email + Retargeting</td><td><span class="sdot" style="background:var(--devops)"></span>MOFU</td><td>Read how they did it</td></tr>
+        <tr><td class="cal-week">Wk 6</td><td>Webinar: DevOps for Non-Technical IT Executives</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">LinkedIn + Email</td><td><span class="sdot" style="background:var(--devops)"></span>MOFU</td><td>Register now</td></tr>
+        <tr><td class="cal-week">Wk 7</td><td>Reddit / Community: "What made your DevOps transformation actually work?"</td><td><span class="ctype ct-social">Social</span></td><td class="ch-text">Reddit r/devops</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Organic engagement</td></tr>
+        <tr><td class="cal-week">Wk 8</td><td>LinkedIn paid: "Your deployment pipeline is your competitive moat"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Sponsored</td><td><span class="sdot" style="background:var(--devops)"></span>MOFU</td><td>Get DevOps playbook</td></tr>
+        <tr><td class="cal-week">Wk 9</td><td>Sails DevOps Platform — Sandbox activation email sequence</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">Email nurture</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Start 14-day trial</td></tr>
+        <tr><td class="cal-week">Wk 10</td><td>Infrastructure as Code: Where to Start for Enterprise IT</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + Communities</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download IaC guide</td></tr>
+        <tr><td class="cal-week">Wk 11</td><td>Email: Invitation to a free DevOps Maturity Workshop</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">ABM sequence</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Book my workshop</td></tr>
+        <tr><td class="cal-week">Wk 12</td><td>Video testimonial: DevOps Lead shares Sails transformation story</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">LinkedIn + YouTube</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Start my trial</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<p>
-Enterprise technology deals involve multiple roles. CIO and CTO leaders approve budgets, Director IT teams evaluate vendors, and technical architects validate architecture fit.
-</p>
-
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--devops)"></span>Lead Magnets + Ad Messaging</div>
+  <div class="grid-2">
+    <div class="mcard border-do">
+      <div class="mcard-top"><div class="mcard-icon bg-do">⚡</div><div><div class="mcard-title">DevOps Maturity Assessment</div><div class="mcard-badge c-do">Tool · TOFU/MOFU</div></div></div>
+      <div class="mcard-body">Score across 5 dimensions: Culture, CI/CD, Monitoring, Security, Infrastructure. Output: maturity level (Crawl/Walk/Run/Fly) + personalised roadmap. High resonance with technical leads and architects.</div>
+      <div class="mcard-foot"><span>Web quiz + PDF report</span><span>Gate: Email</span></div>
+    </div>
+    <div class="mcard border-do">
+      <div class="mcard-top"><div class="mcard-icon bg-do">📦</div><div><div class="mcard-title">DevOps Implementation Playbook — Mid-Market</div><div class="mcard-badge c-do">Guide · MOFU</div></div></div>
+      <div class="mcard-body">Practical DevOps transformation for 200–5,000 employee IT teams. Covers team structure, toolchain (GitHub Actions, Terraform, Docker, K8s), rollout phases, and exec buy-in templates.</div>
+      <div class="mcard-foot"><span>24-page PDF</span><span>Gate: Full contact form</span></div>
+    </div>
+    <div class="acard border-do">
+      <div class="acard-platform c-do">🟡 LinkedIn — CTO / Director IT · MOFU</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Teams shipping weekly outperform teams shipping monthly. The gap is almost always the pipeline."</div>
+        <div class="acard-copy">Sails DevOps services help mid-market IT teams implement production-grade CI/CD, IaC, and monitoring in 6–10 weeks. Free DevOps Maturity Assessment — find your gaps in 10 minutes.</div>
+        <span class="acard-cta" style="background:var(--devops);color:#fff">Get My Maturity Score →</span>
+      </div>
+      <div class="acard-audience">🎯 CTO, Director IT, DevOps Lead, Solutions Architect · 200–5K employees</div>
+    </div>
+    <div class="acard border-do">
+      <div class="acard-platform c-do">🔍 Google Search — Technical Intent</div>
+      <div class="acard-body">
+        <div class="acard-headline">DevOps Transformation Services — Delivered in 6 Weeks</div>
+        <div class="acard-copy">From CI/CD pipeline to full IaC deployment — Sails DevOps engineers embed with your team and deliver measurable results in 6 weeks. Start with a free maturity workshop and roadmap session.</div>
+        <span class="acard-cta" style="background:var(--devops);color:#fff">Book Free Workshop →</span>
+      </div>
+      <div class="acard-audience">🎯 "devops consulting" · "CI/CD implementation" · "DevOps transformation company"</div>
+    </div>
+  </div>
+</div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  ANALYTICS PANEL                                      -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="panel-analytics" class="panel">
+<div class="wrap">
+  <div class="panel-header" style="background:linear-gradient(135deg,#064E3B,#059669)">
+    <div class="ph-icon">📈</div>
+    <div>
+      <div class="ph-title">Analytics</div>
+      <div class="ph-desc">Workforce analytics, people data platforms, BI dashboards, predictive attrition modelling, and real-time reporting. Turning HR data into board-ready insights.</div>
+      <div class="ph-tags"><span class="ph-tag">CHRO</span><span class="ph-tag">CIO</span><span class="ph-tag">Director People Analytics</span><span class="ph-tag">HR Operations</span></div>
+    </div>
+  </div>
 
-<div id="funnel" class="panel">
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--analytics)"></span>Funnel Stages</div>
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-stage tofu-s"><div>TOFU</div><div class="fs-sub">Awareness</div></div>
+      <div class="funnel-pills">
+        <span class="fpill tofu-p">Blog: People analytics 101</span>
+        <span class="fpill tofu-p">LinkedIn: Workforce data insight posts</span>
+        <span class="fpill tofu-p">YouTube: What is workforce analytics?</span>
+        <span class="fpill tofu-p">Social: Attrition cost statistics</span>
+        <span class="fpill tofu-p">Infographic: HR data maturity curve</span>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-stage" style="background:var(--analytics-10);color:#065f46;border-left:3px solid var(--analytics);border-radius:10px;padding:10px 8px;text-align:center;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;"><div>MOFU</div><div class="fs-sub">Evaluation</div></div>
+      <div class="funnel-pills">
+        <span class="fpill" style="background:var(--analytics-10);border-color:rgba(5,150,105,0.3);color:#065f46">People Analytics Starter Kit</span>
+        <span class="fpill" style="background:var(--analytics-10);border-color:rgba(5,150,105,0.3);color:#065f46">Webinar: HR Data That Drives Decisions</span>
+        <span class="fpill" style="background:var(--analytics-10);border-color:rgba(5,150,105,0.3);color:#065f46">Attrition cost calculator</span>
+        <span class="fpill" style="background:var(--analytics-10);border-color:rgba(5,150,105,0.3);color:#065f46">Case study: Predicted 85% of leavers</span>
+        <span class="fpill" style="background:var(--analytics-10);border-color:rgba(5,150,105,0.3);color:#065f46">Analytics use-case email sequence</span>
+      </div>
+    </div>
+    <div class="funnel-row" style="margin-bottom:0">
+      <div class="funnel-stage bofu-s"><div>BOFU</div><div class="fs-sub">Decision</div></div>
+      <div class="funnel-pills">
+        <span class="fpill bofu-p">Live dashboard walkthrough demo</span>
+        <span class="fpill bofu-p">30-day free analytics trial</span>
+        <span class="fpill bofu-p">Free data audit session</span>
+        <span class="fpill bofu-p">Custom analytics scope proposal</span>
+      </div>
+    </div>
+  </div>
 
-<h2>Buying Funnel Structure</h2>
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--analytics)"></span>90-Day Content Calendar</div>
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead><tr><th>Week</th><th>Content Piece</th><th>Type</th><th>Channel</th><th>Funnel</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td class="cal-week">Wk 1</td><td>Workforce Analytics: The 5 Metrics Every CHRO Needs in 2025</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download analytics guide</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>Attrition Cost Calculator: How much is turnover costing your org?</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">LinkedIn + Google Ads</td><td><span class="sdot" style="background:var(--analytics)"></span>MOFU</td><td>Calculate my cost</td></tr>
+        <tr><td class="cal-week">Wk 3</td><td>People Analytics Starter Kit — dashboards, templates, KPI framework (gated)</td><td><span class="ctype ct-guide">Guide</span></td><td class="ch-text">LinkedIn LGF + Email</td><td><span class="sdot" style="background:var(--analytics)"></span>MOFU</td><td>Download free kit</td></tr>
+        <tr><td class="cal-week">Wk 4</td><td>Webinar: From Data to Decisions — Workforce Analytics That Actually Work</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">LinkedIn + Email</td><td><span class="sdot" style="background:var(--analytics)"></span>MOFU</td><td>Register free</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>Case study: How [Company] predicted 85% of flight risks 60 days early</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">ABM email + Retargeting</td><td><span class="sdot" style="background:var(--analytics)"></span>MOFU</td><td>See the methodology</td></tr>
+        <tr><td class="cal-week">Wk 6</td><td>LinkedIn exec: "Your HR data is already there. Here's what it's telling you."</td><td><span class="ctype ct-social">Social</span></td><td class="ch-text">LinkedIn Organic</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download starter kit</td></tr>
+        <tr><td class="cal-week">Wk 7</td><td>Video: Sails Analytics Dashboard — Live walkthrough (10 min)</td><td><span class="ctype ct-video">Video</span></td><td class="ch-text">YouTube + LinkedIn</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Start 30-day trial</td></tr>
+        <tr><td class="cal-week">Wk 8</td><td>LinkedIn paid: "Most CHROs can't answer this question. Can you?"</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Sponsored</td><td><span class="sdot" style="background:var(--analytics)"></span>MOFU</td><td>Get analytics guide</td></tr>
+        <tr><td class="cal-week">Wk 9</td><td>Email: "Book your free 30-day Sails Analytics trial"</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">Email nurture</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Start free trial</td></tr>
+        <tr><td class="cal-week">Wk 10</td><td>Predictive HR Analytics: A Non-Technical Explainer for Executives</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + LinkedIn</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Book analytics demo</td></tr>
+        <tr><td class="cal-week">Wk 12</td><td>Webinar: Live Sails Analytics Demo — Real data, real insights</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">Email + LinkedIn Paid</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Register for live demo</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<div class="funnel">
-
-<div class="stage">
-<h3>Decision Makers</h3>
-<p>CIO, CTO and CDO leaders responsible for strategic technology decisions and budget approval.</p>
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--analytics)"></span>Lead Magnets + Ad Messaging</div>
+  <div class="grid-2">
+    <div class="mcard border-an">
+      <div class="mcard-top"><div class="mcard-icon bg-an">💸</div><div><div class="mcard-title">Attrition Cost Calculator</div><div class="mcard-badge c-an">Tool · TOFU/MOFU</div></div></div>
+      <div class="mcard-body">Enter headcount, average salary, and turnover rate. Instantly calculates the true annual cost of attrition including recruiting, onboarding, and lost productivity. Shocking numbers create demo urgency.</div>
+      <div class="mcard-foot"><span>Web tool + PDF</span><span>Gate: Email for report</span></div>
+    </div>
+    <div class="mcard border-an">
+      <div class="mcard-top"><div class="mcard-icon bg-an">📦</div><div><div class="mcard-title">People Analytics Starter Kit</div><div class="mcard-badge c-an">Bundle · MOFU</div></div></div>
+      <div class="mcard-body">5-template bundle: Attrition dashboard, engagement scorecard, headcount planner, diversity tracker, and CHRO board slide template. Immediately useful — high perceived value, low gate friction.</div>
+      <div class="mcard-foot"><span>XLSX + Google Sheets</span><span>Gate: Full form</span></div>
+    </div>
+    <div class="acard border-an">
+      <div class="acard-platform c-an">📊 LinkedIn — CHRO / Director People Analytics</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Most CHROs can't tell their CEO how much attrition cost last year. Can you?"</div>
+        <div class="acard-copy">Sails Workforce Analytics gives HR leaders a real-time, board-ready view of people costs, engagement, and flight risk — without waiting for the data team. Free Attrition Cost Calculator — 60 seconds.</div>
+        <span class="acard-cta" style="background:var(--analytics);color:#fff">Calculate My Attrition Cost →</span>
+      </div>
+      <div class="acard-audience">🎯 CHRO, People Analytics Director, HR Operations, CIO · All industries</div>
+    </div>
+    <div class="acard border-an">
+      <div class="acard-platform c-an">🔍 Google — Active Evaluator</div>
+      <div class="acard-body">
+        <div class="acard-headline">Workforce Analytics Platform — Real Insights in 30 Days</div>
+        <div class="acard-copy">Connect your existing HR data in minutes. Sails Analytics delivers predictive attrition, engagement scoring, and custom dashboards out of the box. Start your 30-day free trial today — no credit card needed.</div>
+        <span class="acard-cta" style="background:var(--analytics);color:#fff">Start Free Trial →</span>
+      </div>
+      <div class="acard-audience">🎯 "workforce analytics software" · "people analytics platform" · "HR data dashboard"</div>
+    </div>
+  </div>
+</div>
 </div>
 
-<div class="stage">
-<h3>Evaluators / Champions</h3>
-<p>Director IT, VP IT and IT Managers who shortlist vendors and run internal evaluation processes.</p>
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  HIGHER EDUCATION PANEL                               -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="panel-edu" class="panel">
+<div class="wrap">
+  <div class="panel-header" style="background:linear-gradient(135deg,#7F1D1D,#DC2626)">
+    <div class="ph-icon">🏫</div>
+    <div>
+      <div class="ph-title">Higher Education</div>
+      <div class="ph-desc">University-specific HCM, cloud infrastructure, and workforce analytics. FERPA-compliant, purpose-built for higher education buying cycles of 6–18 months. Relationship-first, peer-trust approach.</div>
+      <div class="ph-tags"><span class="ph-tag">University CIO</span><span class="ph-tag">VP HR</span><span class="ph-tag">Provost Office</span><span class="ph-tag">Director IT</span><span class="ph-tag">4-Year Institutions</span></div>
+    </div>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--edu)"></span>Funnel Stages — Note: University buying cycles run 6–18 months. Heavy TOFU investment is critical.</div>
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-stage tofu-s"><div>TOFU</div><div class="fs-sub">Awareness</div></div>
+      <div class="funnel-pills">
+        <span class="fpill tofu-p">Blog: Higher Ed HR modernisation</span>
+        <span class="fpill tofu-p">LinkedIn: University CIO peer posts</span>
+        <span class="fpill tofu-p">EDUCAUSE: Sponsored content</span>
+        <span class="fpill tofu-p">Inside Higher Ed: Guest articles</span>
+        <span class="fpill tofu-p">Events: EDUCAUSE Annual Conference</span>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-stage" style="background:var(--edu-10);color:#7F1D1D;border-left:3px solid var(--edu);border-radius:10px;padding:10px 8px;text-align:center;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;"><div>MOFU</div><div class="fs-sub">Evaluation</div></div>
+      <div class="funnel-pills">
+        <span class="fpill" style="background:var(--edu-10);border-color:rgba(220,38,38,0.3);color:#7F1D1D">University Cloud HCM Buyer's Guide</span>
+        <span class="fpill" style="background:var(--edu-10);border-color:rgba(220,38,38,0.3);color:#7F1D1D">Webinar: Cloud HCM for University CIOs</span>
+        <span class="fpill" style="background:var(--edu-10);border-color:rgba(220,38,38,0.3);color:#7F1D1D">FERPA compliance checklist</span>
+        <span class="fpill" style="background:var(--edu-10);border-color:rgba(220,38,38,0.3);color:#7F1D1D">Cloud migration savings calculator</span>
+        <span class="fpill" style="background:var(--edu-10);border-color:rgba(220,38,38,0.3);color:#7F1D1D">University HCM case study</span>
+      </div>
+    </div>
+    <div class="funnel-row" style="margin-bottom:0">
+      <div class="funnel-stage bofu-s"><div>BOFU</div><div class="fs-sub">Decision</div></div>
+      <div class="funnel-pills">
+        <span class="fpill bofu-p">University CIO Executive Briefing</span>
+        <span class="fpill bofu-p">Peer CIO introductions</span>
+        <span class="fpill bofu-p">Departmental proof-of-concept pilot</span>
+        <span class="fpill bofu-p">Campus-wide rollout proposal</span>
+        <span class="fpill bofu-p">RFP response support</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--edu)"></span>90-Day Content Calendar</div>
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead><tr><th>Week</th><th>Content Piece</th><th>Type</th><th>Channel</th><th>Funnel</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td class="cal-week">Wk 1</td><td>Why University HR Technology is 10 Years Behind — And How That's Changing</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + EDUCAUSE</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download university guide</td></tr>
+        <tr><td class="cal-week">Wk 1</td><td>EDUCAUSE newsletter sponsored content placement</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">EDUCAUSE Newsletter</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download free guide</td></tr>
+        <tr><td class="cal-week">Wk 2</td><td>University HR Compliance Checklist: FERPA, FLSA & Title IX (gated)</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">LinkedIn + Email</td><td><span class="sdot" style="background:var(--edu)"></span>MOFU</td><td>Download checklist</td></tr>
+        <tr><td class="cal-week">Wk 3</td><td>Cloud HCM for Universities: A Buyer's Guide (24 pages, gated)</td><td><span class="ctype ct-guide">Guide</span></td><td class="ch-text">ABM + LinkedIn LGF</td><td><span class="sdot" style="background:var(--edu)"></span>MOFU</td><td>Download guide</td></tr>
+        <tr><td class="cal-week">Wk 4</td><td>Webinar: Modernising University HR — Cloud Migration Playbook</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">EDUCAUSE + Email</td><td><span class="sdot" style="background:var(--edu)"></span>MOFU</td><td>Register free</td></tr>
+        <tr><td class="cal-week">Wk 5</td><td>Case study: How [University] consolidated 6 systems into one cloud HCM</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">ABM email + LinkedIn</td><td><span class="sdot" style="background:var(--edu)"></span>MOFU</td><td>Read the full story</td></tr>
+        <tr><td class="cal-week">Wk 6</td><td>Inside Higher Ed guest article: The CIO's Case for Cloud HCM</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">Inside Higher Ed</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Visit Sails website</td></tr>
+        <tr><td class="cal-week">Wk 7</td><td>LinkedIn paid: Target University HR Director + CIO titles</td><td><span class="ctype ct-paid">Paid Ad</span></td><td class="ch-text">LinkedIn Sponsored</td><td><span class="sdot" style="background:var(--edu)"></span>MOFU</td><td>Download buyer's guide</td></tr>
+        <tr><td class="cal-week">Wk 8</td><td>ABM sequence: invite University CIO to CIO Roundtable (CEO sends)</td><td><span class="ctype ct-email">Email</span></td><td class="ch-text">ABM (CEO sender)</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Join CIO Roundtable</td></tr>
+        <tr><td class="cal-week">Wk 9</td><td>University Cloud Migration Savings Calculator (interactive)</td><td><span class="ctype ct-asset">Asset</span></td><td class="ch-text">Website + Email nurture</td><td><span class="sdot" style="background:var(--edu)"></span>MOFU</td><td>Calculate my savings</td></tr>
+        <tr><td class="cal-week">Wk 10</td><td>FERPA Compliance in the Cloud: What University IT Must Know</td><td><span class="ctype ct-blog">Blog</span></td><td class="ch-text">SEO + EDUCAUSE</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Download compliance guide</td></tr>
+        <tr><td class="cal-week">Wk 11</td><td>CEO LinkedIn post: Shares insights from the University CIO Roundtable</td><td><span class="ctype ct-social">Social</span></td><td class="ch-text">LinkedIn Organic</td><td><span class="sdot" style="background:#94A3B8"></span>TOFU</td><td>Join next roundtable</td></tr>
+        <tr><td class="cal-week">Wk 12</td><td>Webinar: University CIO Panel — Cloud Transformation in Higher Ed</td><td><span class="ctype ct-webinar">Webinar</span></td><td class="ch-text">EDUCAUSE + LinkedIn</td><td><span class="sdot" style="background:#059669"></span>BOFU</td><td>Book EBC session</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-title"><span class="sec-title-bar" style="background:var(--edu)"></span>Lead Magnets + Ad Messaging</div>
+  <div class="grid-2">
+    <div class="mcard border-ed">
+      <div class="mcard-top"><div class="mcard-icon bg-ed">📚</div><div><div class="mcard-title">University Cloud HCM Buyer's Guide</div><div class="mcard-badge c-ed">Guide · MOFU</div></div></div>
+      <div class="mcard-body">24-page guide covering FERPA compliance, Banner/PeopleSoft migration paths, shared services models, faculty vs staff workflow differences, and procurement process navigation for university buying committees.</div>
+      <div class="mcard-foot"><span>24-page PDF</span><span>Gate: Full form (7 fields)</span></div>
+    </div>
+    <div class="mcard border-ed">
+      <div class="mcard-top"><div class="mcard-icon bg-ed">✅</div><div><div class="mcard-title">University HR Compliance Checklist</div><div class="mcard-badge c-ed">Template · MOFU</div></div></div>
+      <div class="mcard-body">FERPA, FLSA, Title IX, and ADA compliance checklist for university HR systems. Includes vendor assessment rubric and procurement approval template. Reaches both HR and Compliance buyers simultaneously.</div>
+      <div class="mcard-foot"><span>PDF + DOCX</span><span>Gate: Name + email + institution</span></div>
+    </div>
+    <div class="acard border-ed">
+      <div class="acard-platform c-ed">🏫 LinkedIn — University CIO / VP HR</div>
+      <div class="acard-body">
+        <div class="acard-headline">"Most university HR systems were built when fax machines were current technology. Your staff deserves better."</div>
+        <div class="acard-copy">Sails has helped university IT teams replace legacy HR infrastructure with FERPA-compliant cloud HCM — without disrupting a single semester. Download the University Cloud HCM Buyer's Guide, free.</div>
+        <span class="acard-cta" style="background:var(--edu);color:#fff">Download Buyer's Guide →</span>
+      </div>
+      <div class="acard-audience">🎯 University CIO, VP HR, Director IT · 4-year institutions + university systems</div>
+    </div>
+    <div class="acard border-ed">
+      <div class="acard-platform c-ed">📰 EDUCAUSE Newsletter Sponsorship</div>
+      <div class="acard-body">
+        <div class="acard-headline">Is Your University HR Stack FERPA-Ready for the Cloud?</div>
+        <div class="acard-copy">As institutions move to cloud infrastructure, FERPA compliance requirements for HR data are evolving. Sails is the only cloud HCM purpose-designed for higher education compliance. Download our free guide.</div>
+        <span class="acard-cta" style="background:var(--edu);color:#fff">Get Free Compliance Guide →</span>
+      </div>
+      <div class="acard-audience">🎯 EDUCAUSE member audience — University IT and HR leadership</div>
+    </div>
+  </div>
+</div>
 </div>
 
-<div class="stage">
-<h3>Technical Validators</h3>
-<p>Solutions Architects and DevOps leaders validating architecture, integration capability and security.</p>
+<!-- FOOTER -->
+<div class="foot">
+  <div class="foot-logo"><img src="data:image/png;base64,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" alt="Sails Software"></div>
+  <div class="foot-text"><strong>Sails Software Inc</strong> · Content Strategy Hub · Version 2.0 · Q1 2025 · Confidential & Proprietary</div>
+  <div class="foot-text">HCM · AI Services · Cloud · DevOps · Analytics · Higher Education</div>
 </div>
-
-</div>
-
-</div>
-
-
-<div id="calendar" class="panel">
-
-<h2>90-Day Content Calendar</h2>
-
-<table>
-
-<tr>
-<th>Week</th>
-<th>Content</th>
-<th>Type</th>
-<th>Channel</th>
-</tr>
-
-<tr>
-<td>Week 1</td>
-<td>Why CIOs Are Replacing Legacy HCM Platforms</td>
-<td>Blog</td>
-<td>SEO + LinkedIn</td>
-</tr>
-
-<tr>
-<td>Week 3</td>
-<td>CIO Cloud and AI Transformation Playbook</td>
-<td>Guide</td>
-<td>LinkedIn + ABM</td>
-</tr>
-
-<tr>
-<td>Week 6</td>
-<td>Cloud HCM Implementation Without the Pain</td>
-<td>Webinar</td>
-<td>LinkedIn + Email</td>
-</tr>
-
-<tr>
-<td>Week 8</td>
-<td>DevOps Advantage in Enterprise HCM Deployments</td>
-<td>Blog</td>
-<td>Blog + Tech Communities</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<section class="cta">
-
-<div>
-
-<h3>Download the CIO Cloud & AI Transformation Playbook</h3>
-
-<p>
-Research-backed guide for CIOs and IT leaders evaluating AI, Cloud HCM and DevOps modernization strategies.
-</p>
-
-</div>
-
-<button>Download Strategy</button>
-
-</section>
-
-
-<footer>
-
-SAILS Software Inc | AI, Cloud, HCM, DevOps & Analytics Growth Strategy
-
-</footer>
-
 
 <script>
-
-function openTab(id,btn){
-
-document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'))
-document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'))
-
-document.getElementById(id).classList.add('active')
-btn.classList.add('active')
-
+function showTab(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:document.querySelector('.tabs-wrap').offsetTop-70,behavior:'smooth'});
 }
-
-/* COUNTERS */
-
-const counters=document.querySelectorAll('.counter')
-
-counters.forEach(counter=>{
-counter.innerText='0'
-const update=()=>{
-const target=+counter.getAttribute('data-target')
-const c=+counter.innerText
-const inc=target/100
-if(c<target){
-counter.innerText=Math.ceil(c+inc)
-setTimeout(update,20)
-}else{
-counter.innerText=target
-}
-}
-update()
-})
-
 </script>
-
 </body>
 </html>
